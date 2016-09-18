@@ -1,0 +1,58 @@
+body {
+  width: 600px;
+  font-family: "Helvetica", sans-serif;
+  /*font-size: 100%;*/
+  background-color: rgba(135, 135, 135, 1);
+  margin: auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgba(68, 68, 68, 1);
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Cormorant SC', serif;
+  letter-spacing: 1.5;
+  font-weight: 100;
+  font-size: 26px;
+}
+
+h2 {
+  font-family: 'Cormorant SC', serif;
+  font-variant: small-caps;
+  letter-spacing: 1.5;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.excerpt {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin: auto;
+  width: 90%;
+  padding: 20px;
+}
+
+.excerpt img {
+  max-width: 250px;
+  height: auto;
+}
+
+.wikiLink {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  cursor: pointer;
+}

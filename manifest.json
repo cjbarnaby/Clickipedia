@@ -1,0 +1,27 @@
+{
+  "name": "Clickipedia",
+  "manifest_version": 2,
+  "version": "0.1.1",
+  "description": "Get excerpts and images of Wikipedia articles matching browser text selection.",
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icon48.png",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["event.js"],
+    "persistent": false
+  },
+
+  "content_security_policy": "script-src 'self' https://en.wikipedia.org/; object-src 'self'",
+
+  "permissions": ["tabs", "http://*/*", "https://*/*"]
+
+}
