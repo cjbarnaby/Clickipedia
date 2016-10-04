@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	var globals = {
+		query: null,
 		image: null,
 		extract: null,
 		title: null,
@@ -40,12 +41,12 @@ $(document).ready(function() {
 			var title = pages[obj].title;
 			var url = pages[obj].fullurl;
 			config.$excerpt.fadeIn();
-			elements.$title.text(title);
 			var $link = $("<p>" + title + "</p>");
 			$link.attr("data-url", url);
 			$link.addClass("wikiLink");
 			elements.$extract.append($link);
 		}
+		elements.$title.text(globals.query + " — Disambiguation");
 	};
 
 	var getDisambiguationPage = function() {
@@ -68,6 +69,7 @@ $(document).ready(function() {
 
 	var getExcerpt = function(input) {
 		reset();
+		globals.query = input;
 		$.ajax({
 			url: config.baseUrl,
 			dataType: "jsonp",
@@ -83,7 +85,6 @@ $(document).ready(function() {
 				inprop: "url"
 			}
 		}).done(function(data) {
-			console.log(data);
 			checkExcerpt(data);
 		});
 	};
@@ -168,6 +169,7 @@ $(document).ready(function() {
 		// our onPageDetailsReceived function as the callback. This injects
 		// content.js into the current tab's HTML
 		eventPage.getPageDetails(onPageDetailsReceived);
+		// eventPage.onClickHandler(onPageDetailsReceived);
 	});
 
 	config.$excerpt.hide();
@@ -178,10 +180,10 @@ $(document).ready(function() {
 			config.$excerpt.fadeIn();
 			elements.$title.text("Welcome to Clickpedia");
 			elements.$extract.text("Select text in your browser before running the Clickipedia action to get an excerpt and (where available) an image of related content on Wikipedia.");
-						console.log(elements.$excerpt);
 		} else {
-			console.log(query);
 			getExcerpt(query);
 		}
 	};
+
+
 });

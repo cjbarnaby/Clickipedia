@@ -11,3 +11,21 @@ function getPageDetails(callback) {
         callback(message);
     });
 }
+
+// 
+// // CONTEXT MENU CODE:
+// function onClickHandler(callback) {
+//   chrome.tabs.executeScript(null, { file: 'content.js' });
+//
+//   // Perform the callback when a message is received from the content script
+//   chrome.runtime.onMessage.addListener(function(message)  {
+//       // Call the callback function
+//       callback(message);
+//   });
+// }
+//
+// // chrome.contextMenus.onClicked.addListener(onClickHandler);
+//
+// chrome.runtime.onInstalled.addListener(function() {
+//   chrome.contextMenus.create({"title": "Clickipedia", "contexts": ["selection"], "id": "getClickipedia"});
+// });
