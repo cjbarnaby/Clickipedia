@@ -98,10 +98,10 @@ $(document).ready(function() {
 	};
 
 	var getThumbnail = function() {
-		if (!globals.obj.thumbnail) {
+		if (!globals.obj.original.source) {
 			globals.image = config.noImage;
 		} else {
-			globals.image = globals.obj.thumbnail.original;
+			globals.image = globals.obj.original.source;
 		}
 	};
 
