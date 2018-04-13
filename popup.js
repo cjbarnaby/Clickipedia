@@ -98,10 +98,10 @@ $(document).ready(function() {
 	};
 
 	var getThumbnail = function() {
-		if (!globals.obj.original.source) {
-			globals.image = config.noImage;
-		} else {
+		try {
 			globals.image = globals.obj.original.source;
+		} catch (e) {
+			globals.image = config.noImage;
 		}
 	};
 
@@ -178,8 +178,8 @@ $(document).ready(function() {
 		query = pageDetails.selection;
 		if (query.length < 1) {
 			config.$excerpt.fadeIn();
-			elements.$title.text("Welcome to Clickpedia");
-			elements.$extract.text("Select text in your browser before running the Clickipedia action to get an excerpt and (where available) an image of related content on Wikipedia.");
+			elements.$title.text("Welcome to Clickipedia");
+			elements.$extract.text("Select text in your browser then run the Clickipedia action to get an excerpt and (where available) an image of related content on Wikipedia.");
 		} else {
 			getExcerpt(query);
 		}
